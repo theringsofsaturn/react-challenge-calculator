@@ -1,0 +1,40 @@
+.lists {
+  list-style-type: none;
+}
+
+.button-row {
+  background-color: #d3d3d4;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  margin-left: 10px;
+  border: none;
+  background-color: #d3d3d4;
+}
+
+.add-button {
+  background-color: #d3d3d4;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100px;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+input {
+  margin-left: 30px;
+}
