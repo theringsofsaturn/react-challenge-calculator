@@ -1,6 +1,6 @@
-import MyNavbar from './components/MyNavbar';
-import Calculator from './components/Calculator';
-import Description from './components/Description';
+import MyNavbar from './components/Navbar/MyNavbar';
+import Calculator from './components/Calculator/Calculator';
+import Description from './components/Description/Description';
 import './App.css';
 
 function App() {

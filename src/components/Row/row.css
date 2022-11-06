@@ -1,0 +1,26 @@
+.disabledButton {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.unableButton {
+  pointer-events: visiblePainted !important;
+}
+
+input {
+  width: 100px;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+input {
+  margin-left: 30px;
+}
+
+.buttons {
+  margin-left: 10px;
+  border: none;
+  background-color: #d3d3d4;
+}

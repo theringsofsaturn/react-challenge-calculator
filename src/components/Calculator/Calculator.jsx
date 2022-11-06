@@ -1,4 +1,4 @@
-import Row from './Row';
+import Row from '../Row/Row';
 import './calculator.css';
 import { useState } from 'react';
 

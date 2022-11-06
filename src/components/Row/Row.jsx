@@ -19,7 +19,7 @@ const Row = () => {
   };
 
   // style={{ pointerEvents: isDisabled ? 'none' : 'auto' }}
-  // you can’t interact with this element, or any children of this element, with a mouse, or a touch device, but you can still tab to it with your keyboard. ?!!
+  // you can’t interact with this element, or any children of this element, with a mouse, or a touch device, but it seems that you can still tab to it with your keyboard!!
 
   return (
     <>
@@ -30,9 +30,12 @@ const Row = () => {
             <option>-</option>
           </select>
           <input type="text" placeholder="" />
-          <button onClick={deleteRow}>Delete</button>
-          <button onClick={toggleDisable}>Disable</button>
-          <button>Unable</button>
+          <button className="buttons" onClick={deleteRow}>
+            Delete
+          </button>
+          <button className="buttons" onClick={toggleDisable}>
+            Disable
+          </button>
         </li>
       ) : null}
     </>
