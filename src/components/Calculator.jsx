@@ -5,13 +5,17 @@ import './calculator.css';
 function Home() {
   const [show, setShow] = useState(true);
 
-  const handleClose = () => setShow(false);
+  // Toggle the visibility of the calculator
+  const toggleShow = () => setShow(!show);
 
   return (
     <>
       <div className="wrapper">
         <div>
           <button className="add-button">Add row</button>
+          <button className="toggle-button" onClick={toggleShow}>
+            Toggle
+          </button>
         </div>
         <ul className="lists">
           {show ? (
@@ -21,7 +25,7 @@ function Home() {
                 <option>-</option>
               </select>
               <input type="text" placeholder="100" />
-              <button onClick={handleClose} className="buttons">
+              <button onClick={toggleShow} className="buttons">
                 Delete
               </button>
               <button className="buttons">Disable</button>

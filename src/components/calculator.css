@@ -20,6 +20,14 @@
   cursor: pointer;
   border: none;
   margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.toggle-button {
+  background-color: #d3d3d4;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 20px;
 }
 
 input {
