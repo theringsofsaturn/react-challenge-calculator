@@ -1,36 +1,27 @@
-// import { useState } from 'react';
-import { useState } from 'react';
+import Row from './Row';
 import './calculator.css';
+import { useState } from 'react';
 
 function Home() {
-  const [show, setShow] = useState(true);
+  const [rows, setRows] = useState([1]);
 
-  // Toggle the visibility of the calculator
-  const toggleShow = () => setShow(!show);
+  // Add a new row
+  const addRow = () => {
+    setRows([...rows, 1]);
+  };
 
   return (
     <>
       <div className="wrapper">
         <div>
-          <button className="add-button">Add row</button>
-          <button className="toggle-button" onClick={toggleShow}>
-            Toggle
+          <button onClick={addRow} className="add-button">
+            Add row
           </button>
         </div>
         <ul className="lists">
-          {show ? (
-            <li>
-              <select>
-                <option select>+</option>
-                <option>-</option>
-              </select>
-              <input type="text" placeholder="100" />
-              <button onClick={toggleShow} className="buttons">
-                Delete
-              </button>
-              <button className="buttons">Disable</button>
-            </li>
-          ) : null}
+          {rows.map((row) => (
+            <Row key={row} />
+          ))}
         </ul>
         <div className="result">Result: 123</div>
       </div>

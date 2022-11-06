@@ -27,7 +27,6 @@ const Description = () => {
         </p>
         <Alert.Heading>Solution Below</Alert.Heading>
       </Alert>
-      <hr />
     </>
   );
 };
