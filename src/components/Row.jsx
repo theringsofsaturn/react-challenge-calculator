@@ -2,25 +2,37 @@ import React from 'react';
 import { useState } from 'react';
 
 const Row = () => {
-  const [show, setShow] = useState(true);
+  // Delete the row state
+  const [showRow, setShowRow] = useState(true);
+  // Disable the row state
+  const [disable, setDisable] = useState(false);
 
-  const hideRow = () => {
-    setShow(false);
+  // Disable the row when cliking on the button "disable"
+  const disableRow = (e) => {
+    setDisable(!disable);
   };
 
+  // Delete the row
+  const deleteRow = (e) => {
+    setShowRow(false);
+  };
+
+  const pointerEvent = disable ? 'none' : 'auto';
   return (
     <>
-      {show ? (
-        <li>
+      {showRow ? (
+        <li style={{ pointerEvents: pointerEvent }}>
           <select>
             <option select>+</option>
             <option>-</option>
           </select>
           <input type="text" placeholder="100" />
-          <button onClick={hideRow} className="buttons">
+          <button onClick={deleteRow} className="buttons">
             Delete
           </button>
-          <button className="buttons">Disable</button>
+          <button onClick={disableRow} className="buttons">
+            Disable
+          </button>
         </li>
       ) : null}
     </>

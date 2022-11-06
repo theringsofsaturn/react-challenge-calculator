@@ -19,8 +19,8 @@ function Home() {
           </button>
         </div>
         <ul className="lists">
-          {rows.map((row) => (
-            <Row key={row} />
+          {rows.map((row, i) => (
+            <Row key={i}/>
           ))}
         </ul>
         <div className="result">Result: 123</div>
