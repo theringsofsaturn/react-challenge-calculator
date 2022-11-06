@@ -7,7 +7,7 @@ function Home() {
 
   // Add a new row
   const addRow = () => {
-    setRows([...rows, 1]);
+    setRows([...rows, 1]); // the 1 is just a placeholder
   };
 
   return (
@@ -20,7 +20,7 @@ function Home() {
         </div>
         <ul className="lists">
           {rows.map((row, i) => (
-            <Row key={i}/>
+            <Row key={i} />
           ))}
         </ul>
         <div className="result">Result: 123</div>
