@@ -28,7 +28,9 @@ const Calculator = () => {
   };
 
   // style={{ pointerEvents: isDisabled ? 'none' : 'auto' }}
-  // you can’t interact with this element, or any children of this element, with a mouse, or a touch device, but it seems that you can still tab to it with your keyboard!!
+  // with pointerEvents there are two issues:
+  // 1. It won't let me toggle the disabled state on and off
+  // 2. you can’t interact with this element, or any children of this element, with a mouse, or a touch device, but it seems that you can still tab to it with your keyboard!!
 
   // ===> The solution would be maybe be to add a <fieldset disabled> around the row, and then every element in a disabled fieldset is disabled and you can’t interact with it at all, and it’s not tabbable either. It's also semantically correct.
 

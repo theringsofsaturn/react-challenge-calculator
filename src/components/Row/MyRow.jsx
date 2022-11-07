@@ -41,28 +41,27 @@ const MyRow = () => {
   return (
     <>
       {showRow ? (
-        <fieldset disabled={isDisabled ? 1 : 0}>
-          <li className={isDisabled ? 'disabledButton' : null}>
+        <fieldset className={isDisabled ? 'disabled disabledButton' : ''}>
+          <li>
             <select>
-              <option>+</option>
-              <option>-</option>
+              <option value="plus">+</option>
+              <option value="minus">-</option>
             </select>
             <input
               className="input"
               type="number"
               name="firstNumber"
-              onChange={handleChange}
               placeholder="0"
+              onChange={handleChange}
+              disabled={isDisabled}
             />
-
             <Button
               onClick={toggleDisable}
               className="buttons"
               variant="warning"
             >
-              Disable
+              {isDisabled ? 'Enable' : 'Disable'}
             </Button>
-
             <Button onClick={deleteRow} className="buttons" variant="danger">
               Delete
             </Button>

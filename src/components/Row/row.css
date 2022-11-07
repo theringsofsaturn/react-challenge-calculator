@@ -37,3 +37,7 @@ select {
   text-align: center;
   margin-bottom: 40px;
 }
+
+.disabledButton {
+  opacity: 0.5;
+}
