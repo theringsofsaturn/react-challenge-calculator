@@ -1,4 +1,25 @@
-# Getting Started with Create React App
+## React Challenge
+
+![App Screenshot](https://miro.medium.com/max/1400/1*RwiKsxuJPnve0oK8i7gxhg.png)
+
+Taken the html structure in the example (index.html), write a
+simple React calculator (adder) so that has the following mandatory
+functionalities:
+
+- Rows can be added and removed.
+- Each row have a sign (minus or plus).
+- Each row can be enabled or disabled by a dedicated control button.
+- Disabled rows must be excluded from the addition.
+- The result must be updated "live" while the user is writing.
+
+Feel free to add libraries if needed. Structure and quality of the code, are matter of evaluation. ES6+ Javascript knowledge is matter of
+evaluation. Look and feel of the solution is a plus.
+
+## Authors
+
+- [@theringsofsaturn](https://www.github.com/octokatherine)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
