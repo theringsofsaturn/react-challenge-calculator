@@ -1,14 +1,14 @@
 import './App.css';
 import Description from './components/Description/Description';
 import MyNavbar from './components/Navbar/MyNavbar';
-import Calculator from './components/Calculator/Calculator';
+import Main from './components/Main/Main';
 
 function App() {
   return (
     <div className="App">
       <MyNavbar />
       <Description />
-      <Calculator />
+      <Main />
     </div>
   );
 }

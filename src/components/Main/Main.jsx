@@ -47,11 +47,11 @@ const Calculator = () => {
             <MyRow key={i} />
           ))}
         </ul>
-        <div className="result">
+        {/* <div className="result">
           <Alert className="result center-block" variant="success">
             Result: {sum}
           </Alert>
-        </div>
+        </div> */}
       </div>
     </>
   );

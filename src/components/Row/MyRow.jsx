@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import Alert from 'react-bootstrap/Alert';
 import { useState } from 'react';
 import './row.css';
 
@@ -8,19 +9,44 @@ const MyRow = () => {
   const [showRow, setShowRow] = useState(true);
   // Disable the row state
   const [isDisabled, setIsDisabled] = useState(false);
-  // Calculate sum state
-  const [sum, setSum] = useState(0);
+  // Input value state
+  const [inputValue, setInputValue] = useState({
+    firstInput: '',
+    secondInput: '',
+  });
+  const [result, setResult] = useState('');
+  // Sign state
+  const [sign, setSign] = useState('+');
 
-  // Input change handler
-  const handleChange = (e) => {
-    const { value, name } = e.target;
-    // Check if the input is empty
-    if (value === '') {
-      setSum(0);
+  // Sign change
+  const handleSign = (e) => {
+    setSign(e.target.value);
+  };
+
+  // Handle input change
+  const handleInputValue = (e) => {
+    setInputValue({
+      ...inputValue,
+      [e.target.name]: e.target.value,
+    });
+
+    sumOfTwoInputs();
+  };
+  // Sum calculation function
+  const sumOfTwoInputs = () => {
+    if (sign === '+') {
+      setResult(Number(inputValue.firstInput) + Number(inputValue.secondInput));
     } else {
-      // Calculate the sum
-      setSum((prevSum) => prevSum + parseInt(value));
+      setResult(Number(inputValue.firstInput) - Number(inputValue.secondInput));
     }
+    // console.log(result);
+    // console.log(inputValue.firstInput);
+    // console.log(inputValue.secondInput);
+  };
+
+  // Update the result on input change
+  const handleResult = () => {
+    sumOfTwoInputs();
   };
 
   // Delete the row
@@ -47,13 +73,18 @@ const MyRow = () => {
               <option value="plus">+</option>
               <option value="minus">-</option>
             </select>
+            {/* Create two inputs, get their value and sum them. Then show the sum in the result div */}
             <input
-              className="input"
               type="number"
-              name="firstNumber"
-              placeholder="0"
-              onChange={handleChange}
-              disabled={isDisabled}
+              name="firstInput"
+              value={inputValue.firstInput}
+              onChange={handleInputValue}
+            />
+            <input
+              type="number"
+              name="secondInput"
+              value={inputValue.secondInput}
+              onChange={handleInputValue}
             />
             <Button
               onClick={toggleDisable}
@@ -68,6 +99,11 @@ const MyRow = () => {
           </li>
         </fieldset>
       ) : null}
+      {/* - The result must be updated "live" while the user is writing */}
+      <Alert variant="success" className="result">
+        Result:
+      </Alert>
+      <input type="number" value={result} onChange={handleResult} />
     </>
   );
 };
