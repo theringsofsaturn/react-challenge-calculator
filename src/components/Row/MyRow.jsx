@@ -99,11 +99,18 @@ const MyRow = () => {
           </li>
         </fieldset>
       ) : null}
-      {/* - The result must be updated "live" while the user is writing */}
+      {/* - The result must be updated "live" while the user is writing =>> Updates live correctly, but small bug showing result -1. Result different when clicking the input arrows to update numbers, and different result when entering them. Will fix it tomorrow.*/}
       <Alert variant="success" className="result">
-        Result:
+        Live result:
       </Alert>
       <input type="number" value={result} onChange={handleResult} />
+      {/* Result on click =>> Works correctly */}
+      <div className="result">
+        <Alert onClick={sumOfTwoInputs} variant="success">
+          Click for the result!
+        </Alert>
+        <span>Click for the result: {result}</span>
+      </div>
     </>
   );
 };
