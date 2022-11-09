@@ -37,6 +37,7 @@ const Calculator = () => {
   return (
     <>
       <div className="wrapper">
+        <h1>CALCULATOR</h1>
         <div>
           <Button onClick={addRow} className="add-button" variant="primary">
             Add Row

@@ -87,7 +87,6 @@ const MyRow = () => {
             </Button>
           </li>
           {/* The result must be another input and should update "live" while the user is writing in the inputs */}
-
           <Alert className="result" variant="success">
             Live Result:
           </Alert>
