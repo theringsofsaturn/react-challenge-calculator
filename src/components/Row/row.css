@@ -26,6 +26,7 @@ select {
   border: 1px solid #ccc;
   background-color: #44c4f7;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .result {
@@ -38,6 +39,35 @@ select {
   margin-bottom: 40px;
 }
 
-.disabledButton {
+*:disabled {
   opacity: 0.5;
+  /* pointer-events: none; */
+}
+.span-result {
+  margin-top: 30px;
+}
+
+.input-live {
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin-right: 80px;
+  border-radius: 5px;
+  width: 60px;
+  height: 35px;
+  border: 1px solid #ccc;
+}
+
+.input-clicked {
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60px;
+  height: 35px;
+  border: 1px solid #ccc;
+}
+
+.clicked-result {
+  cursor: pointer;
 }

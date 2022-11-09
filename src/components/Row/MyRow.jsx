@@ -34,14 +34,17 @@ const MyRow = () => {
   };
   // Sum calculation function
   const sumOfTwoInputs = () => {
-    if (sign === '+') {
-      setResult(Number(inputValue.firstInput) + Number(inputValue.secondInput));
-    } else {
-      setResult(Number(inputValue.firstInput) - Number(inputValue.secondInput));
-    }
-    // console.log(result);
-    // console.log(inputValue.firstInput);
-    // console.log(inputValue.secondInput);
+    setResult(Number(inputValue.firstInput) + Number(inputValue.secondInput));
+
+    // if (sign === '+') {
+    //   setResult(firstNumber + secondNumber);
+    // } else if (sign === '-') {
+    //   setResult(firstNumber - secondNumber);
+    // } else if (sign === '*') {
+    //   setResult(firstNumber * secondNumber);
+    // } else if (sign === '/') {
+    //   setResult(firstNumber / secondNumber);
+    // }
   };
 
   // Update the result on input change
@@ -66,8 +69,10 @@ const MyRow = () => {
 
   return (
     <>
+      {/* Delete row when showRow is false  */}
       {showRow ? (
-        <fieldset className={isDisabled ? 'disabled disabledButton' : ''}>
+        /* Hide row when isDisabled is true */
+        <fieldset disabled={isDisabled}>
           <li>
             <select>
               <option value="plus">+</option>
@@ -75,12 +80,14 @@ const MyRow = () => {
             </select>
             {/* Create two inputs, get their value and sum them. Then show the sum in the result div */}
             <input
+              className="input"
               type="number"
               name="firstInput"
               value={inputValue.firstInput}
               onChange={handleInputValue}
             />
             <input
+              className="input"
               type="number"
               name="secondInput"
               value={inputValue.secondInput}
@@ -100,17 +107,16 @@ const MyRow = () => {
         </fieldset>
       ) : null}
       {/* - The result must be updated "live" while the user is writing =>> Updates live correctly, but small bug showing result -1. Result different when clicking the input arrows to update numbers, and different result when entering them. Will fix it tomorrow.*/}
-      <Alert variant="success" className="result">
-        Live result:
-      </Alert>
-      <input type="number" value={result} onChange={handleResult} />
-      {/* Result on click =>> Works correctly */}
       <div className="result">
-        <Alert onClick={sumOfTwoInputs} variant="success">
-          Click for the result!
+        <Alert
+          variant="success"
+          className="clicked-result"
+          onClick={sumOfTwoInputs}
+        >
+          Clicked result: {result}
         </Alert>
-        <span>Click for the result: {result}</span>
       </div>
+      {/* Result on click =>> Works correctly */}
     </>
   );
 };
