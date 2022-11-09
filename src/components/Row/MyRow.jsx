@@ -51,7 +51,7 @@ const MyRow = () => {
     <>
       {/* Delete row when showRow is false  */}
       {showRow ? (
-        /* Hide row when isDisabled is true */
+        /* Disable row when isDisabled is true */
         <fieldset disabled={isDisabled}>
           <li>
             {/* Create two inputs, get their value and sum them. Then show the sum in the result div */}
